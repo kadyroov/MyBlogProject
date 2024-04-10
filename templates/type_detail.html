@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+
+{% block title %}{{baloon.title}}{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <h1>{{baloon.name}}</h1>
+    <br>
+</div>
+<div class="container" style="background-color: antiquewhite;">
+    <div class="row mb-3">
+        <li>{{baloon.type_price}}₸</li>
+       {%if baloon.description %}
+        <li>{{baloon.description}}</li>
+       {% endif %}
+        <li>{{baloon.created_at}}</li>
+    </div>
+</div>
+
+
+{% endblock %}

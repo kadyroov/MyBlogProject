@@ -1,0 +1,71 @@
+{% extends 'base.html'%}
+
+{% block title %}{{baloon.title}}{% endblock %}
+
+
+{% block content %}
+<div class="container">
+
+
+    <h1>{{baloon.title}}</h1>
+    <br>
+    <p>{{ baloon.description}}</p>
+    <p>{{ baloon.all_price}}</p>
+    <p>{{ baloon.color}}</p>
+    <p>{{ baloon.size}}</p>
+    <p>{{ baloon.type}}</p>
+    <div class="container" style="justify-content: center; text-align: center;">
+        {% if baloon.image %}
+        <img src="{{ baloon.image.url }}" width="10%">
+        {%endif%}
+    </div>
+    <br><br>
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <ul>
+                    <li>
+                        {% if baloon.is_helium %}
+                        С гелием - Да
+                        {% else %}
+                        С гелием - Нет
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if baloon.is_painted %}
+                        С рисунком - Да
+                        {% else %}
+                        С рисунком - Нет
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if baloon.is_metallic %}
+                        Металлик
+                        {% else %}
+                        Не Металлик
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if baloon.is_foil %}
+                        Фольгированный
+                        {% else %}
+                        Не Фольгированный
+                        {% endif %}
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <b>Размер:</b> {{baloon.baloon_size}} <br>
+                <b>Форма шарика: </b>{{baloon.baloon_type }} <br>
+                <b>Цвет:</b> {{baloon.baloon_color}} <br>
+                <b>Цена:</b> {{ baloon.balloon_all_price }}
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+{% endblock %}

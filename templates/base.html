@@ -1,0 +1,42 @@
+<!-- bootstrap5 -->
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title%} {% endblock %} | Zeppelin </title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a href="/"
+                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <img class="bi me-2" width='40' height=40' src="https://cdn-icons-png.flaticon.com/512/1008/1008118.png"
+                    <span class="fs-4">
+                <b>
+                    Zeppelin
+                </b>
+                </span>
+            </a>
+
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="{% url 'main-page' %}" class="nav-link active" aria-current="page">Главная</a></li>
+                <li class="nav-item"><a href="{% url 'ballon-type' %}" class="nav-link">Ballon Type</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+                <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Контакт</a></li>
+            </ul>
+        </header>
+    </div>
+
+    {% block content %} {% endblock %}
+</body>
+
+</html>
+<!-- index.html > bootstrap5 > server > main.css > bootstrap5 > index.html -->
